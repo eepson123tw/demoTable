@@ -18,7 +18,7 @@ module.exports = {
 	  path: path.resolve(__dirname, 'dist'),
     filename: '[name].js', //抓entry裡面obj的key
     clean: true,
-    publicPath: '/',
+    // publicPath: process.env.NODE_ENV==='development'? '/':'/demoTable',
 	},
   resolve: {
     modules: ['node_modules'],
