@@ -1,8 +1,9 @@
 
 import 'bootstrap';
-import '@/assets/scss/all.scss';
+import '@/scss/all.scss';
 
-console.log(1212312112312323123131);
-
+$(document).ready(function () {
+  console.log('Webpack loaded!');
+});
 
 // $('body').css('background','#f20')

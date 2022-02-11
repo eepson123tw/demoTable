@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { HotModuleReplacementPlugin } = require("webpack")
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV,
@@ -24,32 +26,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(scss)$/,
-        use: [{
-          // inject CSS to page
-          loader: 'style-loader'
-        }, {
-          // translates CSS into CommonJS modules
-          loader: 'css-loader'
-        }, {
-          // Run postcss actions
-          loader: 'postcss-loader',
-          options: {
-            // `postcssOptions` is needed for postcss 8.x;
-            // if you use postcss 7.x skip the key
-            postcssOptions: {
-              // postcss plugins, can be exported to postcss.config.js
-              plugins: function () {
-                return [
-                  require('autoprefixer')
-                ];
-              }
-            }
-          }
-        }, {
-          // compiles Sass to CSS
-          loader: 'sass-loader'
-        }]
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+            MiniCssExtractPlugin.loader,
+            "css-loader",
+            "sass-loader"
+        ],
+
       },
       {
           test: /\.(js)$/,
@@ -70,7 +53,7 @@ plugins: [
     }]
   }),
   new MiniCssExtractPlugin({
-    filename: 'css/[name].css',
+    filename: "./[name].css" 
   }),
 
   new HtmlWebpackPlugin({ 
@@ -85,11 +68,21 @@ plugins: [
   }),
   new webpack.ProvidePlugin({ 
     $: 'jquery',
-    jQuery: 'jquery'
+    jQuery: 'jquery',
+    jquery: 'jquery',
+    'window.jQuery': 'jquery',
+    Popper: ['popper.js', 'default']
   }), 
   new HotModuleReplacementPlugin(),
 ],
-
+optimization: {
+  minimizer: [
+      // CSS optimizer
+      new OptimizeCSSAssetsPlugin(),
+      // JS optimizer by default
+      new TerserPlugin(),
+  ],
+},
 
   devtool: 'inline-source-map',
   target: 'web',
@@ -105,7 +98,6 @@ plugins: [
     static: './dist',
     compress: true,
     port: 3000,
-
 
   },
 }
