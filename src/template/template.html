@@ -8,34 +8,69 @@
   <link rel="stylesheet" href="/demoTable/index.css">
 </head>
 <body>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Oasdasdatto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-  </table>
+
+  <h1 class="display-3 mt-5 mb-3">個人資料表</h1>
+
+<!-- table區塊 -->
+  <div >
+    <table class="table table-bordered">
+      <caption>使用者列表</caption>
+      <thead>
+        <tr class="table-primary">
+          <th scope="col">中文名字</th>
+          <th scope="col">英文名字</th>
+          <th scope="col">性別</th>
+          <th scope="col">手機</th>
+          <th scope="col">電子信箱</th>
+          <th scope="col">修改</th>
+          <th scope="col">刪除</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <th scope="row">妳好</th>
+          <td>Mark</td>
+          <td>男</td>
+          <td>0928293300</td>
+          <td>eepson123@123.com</td>
+          <td>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                修改
+            </button>
+          </td>
+          <td>
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                刪除
+            </button>
+          </td>
+        </tr>
+   
+    </table>
+  </div>
+  
+
+
+
+<!-- 新增dialog -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <script src="/demoTable/index.js"></script>
 </body>
 </html>
