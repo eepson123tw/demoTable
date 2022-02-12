@@ -25,7 +25,9 @@ export class Ajax{
     return this.userData
   }
   insertUser(user){
-    this.userData.push(user)
+    console.log(user);
+    let  data = {...user,id:this.userData.length-1}
+    this.userData.push(data)
   }
   modifyUser(id){
     let  target = this.userData.find((user)=>user.id===id)
