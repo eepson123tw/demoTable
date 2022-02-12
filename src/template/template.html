@@ -15,7 +15,7 @@
   <section class="jumbotron jumbotron-fluid">
     <div class="container">
       <h2 class="display-3 mt-5 mb-3">個人資料表</h2>
-      <p class="lead">提供使用者，新增、搜尋、刪除、修改等功能。</p>
+      <p class="lead">提供使用者 新增、搜尋、刪除、修改等功能。</p>
     </div>
   </section>
 
@@ -23,7 +23,8 @@
 <section class="container my-2">
   <div class="row">
     <div class="col d-flex justify-content-end">   
-      <button  type="button" class="btn btn-success me-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">新增</button>
+      <button  type="button" class="btn btn-success me-1 resetBtn d-none" data-operate="reset" data-bs-toggle="modal" data-bs-target="#staticBackdrop">reset</button>
+      <button  type="button" class="btn btn-success me-1 addBtn" data-operate="add" data-bs-toggle="modal" data-bs-target="#staticBackdrop">新增</button>
       <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">搜尋</button>
     </div>
   </div>
@@ -47,8 +48,8 @@
           <th scope="col">刪除</th>
         </tr>
       </thead>
-      <tbody>
-        <tr >
+      <tbody  class="tableData">
+        <!-- <tr>
           <th scope="row" >
             <div data-toggle="tooltip" data-placement="top" title="Hooray!"> 妳好</div>
           </th>
@@ -62,23 +63,23 @@
             </button>
           </td>
           <td>
-              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <button  type="button" class="btn btn-danger " data-bs-toggle="modal"  data-bs-target="#smallDialog">
                 刪除
             </button>
           </td>
-        </tr>
+        </tr> -->
     </table>
   </div>
   
 
 
 
-<!-- dialog -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- 新搜修改 dialog -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="dialogTitle" aria-hidden="true">
   <div class="modal-dialog  modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header bg-success">
-        <h5 class="modal-title dialogTitle" id="staticBackdropLabel">新增表單</h5>
+        <h5 class="modal-title dialogTitle" id="dialogTitle">新增表單</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -125,14 +126,31 @@
       </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">修改</button>
-        <button type="button" class="btn btn-secondary">重新填寫</button>
-        <button type="button" class="btn btn-danger">取消</button>
+        <button type="button" class="btn btn-primary editedBtn"  data-bs-dismiss="modal">修改</button>
+        <button type="button" class="btn btn-secondary reNewBtn">重新填寫</button>
+        <button type="button" class="btn btn-danger cancelBtn">取消</button>
       </div>
     </div>
   </div>
 </div>
-
+<!-- 刪除 dialog -->
+<div class="modal  smallDialog fade"  id="smallDialog"  data-bs-backdrop="static"   tabindex="-1"  aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <h5 class="modal-title dialogTitle" id="staticBackdropLabel">刪除使用者</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>是否確定刪除?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">確認</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <script src="/demoTable/index.js"></script>
 </body>

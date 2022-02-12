@@ -70,12 +70,13 @@ plugins: [
     $: 'jquery',
     jQuery: 'jquery',
     jquery: 'jquery',
-    'window.jQuery': 'jquery',
-    Popper: ['popper.js', 'default']
+    Popper: ['popper.js', 'default'],
+
   }), 
   new HotModuleReplacementPlugin(),
 ],
 optimization: {
+ 
   minimizer: [
       // CSS optimizer
       new OptimizeCSSAssetsPlugin(),
@@ -84,7 +85,7 @@ optimization: {
   ],
 },
 
-  devtool: 'inline-source-map',
+  devtool: "source-map",
   target: 'web',
   resolve: {
     extensions: [".ts", ".js"],
