@@ -74,12 +74,12 @@
 
 
 
-<!-- 新搜修改 dialog -->
+<!-- 新搜修改搜尋 dialog -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="dialogTitle" aria-hidden="true">
   <div class="modal-dialog  modal-lg modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header bg-success">
-        <h5 class="modal-title dialogTitle" id="dialogTitle">新增表單</h5>
+      <div class="modal-header bg-success content-modal">
+        <h5 class="modal-title dialogTitle content-modal-title" id="dialogTitle">新增表單</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -87,15 +87,15 @@
           <div class="form-group row chineseNameInput my-2">
             <label  class="col-sm-2 col-form-label"  for="chineseInput">中文姓名</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="chineseInput" aria-describedby="enter the chinese Name" placeholder="輸入中文姓名" value="">
-              <small id="enter the chinese Name" class=" form-text text-muted">輸入錯誤</small>
+              <input type="text" class="form-control" id="chineseInput" aria-describedby="chineseInput validationChineseName" placeholder="輸入中文姓名" value="">
+              <small  id="validationChineseName" class="d-none form-text invalid-feedback">不得為空</small>
             </div>
           </div>
           <div class="form-group row  englishNameInput  my-2">
             <label  class="col-sm-2 col-form-label"  for="englishInput">英文姓名</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="englishInput" aria-describedby="enter the engsih name" placeholder="輸入英文姓名" value="">
-              <small id="enter the engsih name" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <input type="text" class="form-control" id="englishInput" aria-describedby="englishInput validationEnglishName" placeholder="輸入英文姓名" value="">
+              <small  id="validationEnglishName" class="d-none form-text invalid-feedback">不得為空</small>
           </div>
           </div>
           <div class="form-group   genderCheckBox  my-2">
