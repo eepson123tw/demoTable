@@ -9,14 +9,35 @@
 </head>
 <body>
 
-  <h1 class="display-3 mt-5 mb-3">個人資料表</h1>
+
+<h1 class="d-none">個人資料表頁面</h1>
+<!-- 介紹 -->
+  <section class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h2 class="display-3 mt-5 mb-3">個人資料表</h2>
+      <p class="lead">提供使用者，新增、搜尋、刪除、修改等功能。</p>
+    </div>
+  </section>
+
+<!-- 搜尋 與  新增  區塊 -->
+<section class="container my-2">
+  <div class="row">
+    <div class="col d-flex justify-content-end">   
+      <button  type="button" class="btn btn-success me-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">新增</button>
+      <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">搜尋</button>
+    </div>
+  </div>
+</section>
+
+
+
 
 <!-- table區塊 -->
-  <div >
-    <table class="table table-bordered">
+  <section class="container" >
+    <table class="table table-bordered table-hover">
       <caption>使用者列表</caption>
       <thead>
-        <tr class="table-primary">
+        <tr class="table-primary text-secondary">
           <th scope="col">中文名字</th>
           <th scope="col">英文名字</th>
           <th scope="col">性別</th>
@@ -28,7 +49,9 @@
       </thead>
       <tbody>
         <tr >
-          <th scope="row">妳好</th>
+          <th scope="row" >
+            <div data-toggle="tooltip" data-placement="top" title="Hooray!"> 妳好</div>
+          </th>
           <td>Mark</td>
           <td>男</td>
           <td>0928293300</td>
@@ -44,27 +67,67 @@
             </button>
           </td>
         </tr>
-   
     </table>
   </div>
   
 
 
 
-<!-- 新增dialog -->
+<!-- dialog -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog  modal-lg modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+      <div class="modal-header bg-success">
+        <h5 class="modal-title dialogTitle" id="staticBackdropLabel">新增表單</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <form>
+          <div class="form-group row chineseNameInput my-2">
+            <label  class="col-sm-2 col-form-label"  for="chineseInput">中文姓名</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="chineseInput" aria-describedby="enter the chinese Name" placeholder="輸入中文姓名" value="">
+              <small id="enter the chinese Name" class=" form-text text-muted">輸入錯誤</small>
+            </div>
+          </div>
+          <div class="form-group row  englishNameInput  my-2">
+            <label  class="col-sm-2 col-form-label"  for="englishInput">英文姓名</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="englishInput" aria-describedby="enter the engsih name" placeholder="輸入英文姓名" value="">
+              <small id="enter the engsih name" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          </div>
+          <div class="form-group   genderCheckBox  my-2">
+              <label class="col-sm-2" >性別</label>
+              <div class="form-check form-check-inline ">
+                <input class="form-check-input" type="radio" name="genderOptions" id="male" value="0">
+                <label class="form-check-label" for="inlineRadio1">男</label>
+              </div>
+              <div  class="form-check form-check-inline ">       
+                <input class="form-check-input" type="radio" name="genderOptions" id="female" value="1">
+                <label class="form-check-label" for="inlineRadio2">女</label>
+              </div>
+          </div>
+          <div class="form-group row phoneNumberInput  my-2">
+            <label  class="col-sm-2 col-form-label"  for="phoneInput">手機</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="phoneInput" aria-describedby="phone" placeholder="輸入手機號碼" value="">
+              <small id="phone" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+          </div>
+          <div class="form-group row emailInput  my-2">
+            <label  class="col-sm-2 col-form-label"  for="exampleInputEmail1">電子信箱</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp1" placeholder="輸入電子信箱 Ex:example@mail.com" value="">
+              <small id="emailHelp1" class=" form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+          </div>
+      </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">修改</button>
+        <button type="button" class="btn btn-secondary">重新填寫</button>
+        <button type="button" class="btn btn-danger">取消</button>
       </div>
     </div>
   </div>
