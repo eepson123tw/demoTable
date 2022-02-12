@@ -33,6 +33,9 @@ export default class Ajax{
     let target = this.userData.find((user)=>user.id===id)
     this.userData[targetId]={...target,...data}
   }
-
+deleteUser(id){
+  let  targetIndex = this.userData.findIndex((user)=>user.id===id)
+  this.userData.splice(targetIndex,1)
+}
 
 }

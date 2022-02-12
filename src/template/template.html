@@ -25,7 +25,7 @@
     <div class="col d-flex justify-content-end">   
       <button  type="button" class="btn btn-success me-1 resetBtn d-none" data-operate="reset" data-bs-toggle="modal" data-bs-target="#staticBackdrop">reset</button>
       <button  type="button" class="btn btn-success me-1 addBtn" data-operate="add" data-bs-toggle="modal" data-bs-target="#staticBackdrop">新增</button>
-      <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">搜尋</button>
+      <button type="button" class="btn btn-dark" data-operate="search"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">搜尋</button>
     </div>
   </div>
 </section>
@@ -48,26 +48,7 @@
           <th scope="col">刪除</th>
         </tr>
       </thead>
-      <tbody  class="tableData">
-        <!-- <tr>
-          <th scope="row" >
-            <div data-toggle="tooltip" data-placement="top" title="Hooray!"> 妳好</div>
-          </th>
-          <td>Mark</td>
-          <td>男</td>
-          <td>0928293300</td>
-          <td>eepson123@123.com</td>
-          <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                修改
-            </button>
-          </td>
-          <td>
-              <button  type="button" class="btn btn-danger " data-bs-toggle="modal"  data-bs-target="#smallDialog">
-                刪除
-            </button>
-          </td>
-        </tr> -->
+      <tbody  class="tableData"></tbody>
     </table>
   </div>
   
@@ -135,18 +116,18 @@
 </div>
 <!-- 刪除 dialog -->
 <div class="modal  smallDialog fade"  id="smallDialog"  data-bs-backdrop="static"   tabindex="-1"  aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header bg-danger">
-        <h5 class="modal-title dialogTitle" id="staticBackdropLabel">刪除使用者</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title dialogTitle " id="staticBackdropLabel">刪除使用者</h5>
+        <button type="button" class="btn-close btnSmallDailogCancel2" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <p>是否確定刪除?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">確認</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary btnSmallDailogConfirm">確認</button>
+        <button type="button" class="btn btn-danger btnSmallDailogCancel">取消</button>
       </div>
     </div>
   </div>
