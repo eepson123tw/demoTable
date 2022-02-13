@@ -60,10 +60,6 @@ plugins: [
     title: '個人資料表',
     filename: 'index.html', //輸出名
     template: 'template/template.html', //輸入指定的資料夾與檔案
-    // viewport: 'width=640, user-scalable=no',
-    // description: 'Webpack前端自動化開發，讓你熟悉現代前端工程師開發的方法!!',
-    // Keywords: 'Webpack前端自動化開發+tailwind UI',
-    // chunks: ['vendor', 'index'], //指定入口js是哪個部分
     inject: 'body'
   }),
   new webpack.ProvidePlugin({ 
