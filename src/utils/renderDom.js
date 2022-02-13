@@ -51,19 +51,23 @@ export const  dialogTypeFactor =(type,id)=>{
   const  titleText=(type)=>{
     if(type==="add") return "新增使用者"
     if(type==="modify") return "修改使用者"
+    if(type==="search") return "搜尋使用者"
   } 
   const btnText=(type)=>{
     if(type==="add") return "新增"
     if(type==="modify") return "修改"
+    if(type==="search") return "搜尋"
   } 
 
   const titleClass=(type)=>{
-    if(type==="add") return "modal-header bg-success content-modal"
-    if(type==="modify") return "modal-header bg-primary  content-modal"
+    if(type==="add") return "modal-header text-white bg-success content-modal"
+    if(type==="modify") return "modal-header  text-white bg-primary  content-modal"
+    if(type==="search") return "modal-header   text-white bg-orange-500 content-modal"
   } 
   const btnClass=(type)=>{
     if(type==="add") return "editedBtn btn btn-success"
     if(type==="modify") return "editedBtn btn btn-primary"
+    if(type==="search") return "editedBtn btn text-white  btn-orange "
   } 
   
   $('.content-modal').removeClass().addClass(titleClass(type))

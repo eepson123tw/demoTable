@@ -38,6 +38,13 @@ $(document).ready(function () {
     
 //todo搜尋功能
 
+$(".searchBtn").on("click",function(){
+  resetFn()
+  type.setType(this.dataset.operate);
+  dialogTypeFactor(type.getType())
+})
+
+
 
   //修改使用者
   function modifyFn(){
@@ -88,7 +95,6 @@ $(document).ready(function () {
         modifyFn()
         deleteFn()
       }
-     
     })
 
 
@@ -105,7 +111,7 @@ $(document).ready(function () {
         $('.btnSmallDailogCancel2').click()
       }
       $('.deleteBtn').click()
-   })
+    })
 
 
 

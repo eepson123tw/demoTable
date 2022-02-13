@@ -3,3 +3,56 @@
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/utilities';
+
+$all-colors: map-merge-multiple(
+  $blues,
+  $indigos,
+  $purples,
+  $pinks,
+  $reds,
+  $oranges,
+  $yellows,
+  $greens,
+  $teals,
+  $cyans
+);
+
+@each $color, $value in $colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'color':
+      map-merge(
+        map-get($utilities, 'color'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'color'), 'values'),
+              ($all-colors)
+            )
+        )
+      ),
+    'background-color': (
+      property: background-color,
+      class: bg,
+      local-vars: (
+        'bg-opacity': 1
+      ),
+      values:
+        map-merge(
+          $all-colors,
+          (
+            'transparent': transparent
+          )
+        )
+    )
+  )
+);
+
+@import 'bootstrap/scss/utilities/api';
