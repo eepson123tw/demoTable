@@ -116,18 +116,20 @@ $(".searchBtn").on("click",function(){
     })
 
     //確認刪除使用者
-    $('.btnSmallDailogConfirm').on("click",function(){
-        let id = user.getUserId()
-        ajax.deleteUser(id)
-        userData =ajax.getData()
-        refreshTable(userData)
-           //若已無使用者
-        if(!userData.length){
-          $('.btnSmallDailogCancel2').click()
-          refreshTableByNoUser("表單中已無使用者，請新增使用者!")
-        }
-        $('.deleteBtn').click()
-    })
+  $('.btnSmallDailogConfirm').on("click",function(){
+      let id = user.getUserId()
+      ajax.deleteUser(id)
+      userData =ajax.getData()
+      refreshTable(userData)
+      modifyFn()
+      deleteFn()
+          //若已無使用者
+      if(!userData.length){
+        $('.btnSmallDailogCancel2').click()
+        refreshTableByNoUser("表單中已無使用者，請新增使用者!")
+      }
+      $('.deleteBtn').click()
+  })
 
   //關閉視窗
   $('.cancelBtn').click(()=>{
