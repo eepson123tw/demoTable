@@ -27,45 +27,52 @@ $(document).ready(function () {
   //實例初始化
   let  userData =ajax.getData()
   refreshTable(userData)
+  addFn()
+  searchFn()
   modifyFn()
   deleteFn()
+
+
+
+  
   //新增使用者
+function addFn(){
   $('.addBtn').on("click",function(){
     resetFn()
     type.setType(this.dataset.operate);
     dialogTypeFactor(type.getType())
   })
+}
 //搜尋使用者
-$(".searchBtn").on("click",function(){
-  resetFn()
-  type.setType(this.dataset.operate);
-  dialogTypeFactor(type.getType())
-})
-
-
-
+function searchFn(){
+  $(".searchBtn").on("click",function(){
+    resetFn()
+    type.setType(this.dataset.operate);
+    dialogTypeFactor(type.getType())
+  })
+}
   //修改使用者
-  function modifyFn(){
-    $('.modifyBtn').on("click",function(){
-      validate.reset()
-      validate.init()
-      let id = this.dataset.id
-      let  userData =ajax.getData()
-      user.setUserId(id)
-      type.setType(this.dataset.operate);
-      dialogTypeFactor(type.getType())
-      insertFormInput(userData,id)
-    })
+function modifyFn(){
+  $('.modifyBtn').on("click",function(){
+    validate.reset()
+    validate.init()
+    let id = this.dataset.id
+    let  userData =ajax.getData()
+    user.setUserId(id)
+    type.setType(this.dataset.operate);
+    dialogTypeFactor(type.getType())
+    insertFormInput(userData,id)
+  })
 
-  }
+}
 
 //刪除使用者
-  function deleteFn(){
-    $('.deleteBtn').on("click",function(){
-      let id = this.dataset.id
-      user.setUserId(id)
-    })
-  }
+function deleteFn(){
+  $('.deleteBtn').on("click",function(){
+    let id = this.dataset.id
+    user.setUserId(id)
+  })
+}
 
 //確認鍵點擊
   $('.editedBtn').click(()=>{
@@ -79,6 +86,8 @@ $(".searchBtn").on("click",function(){
           ajax.insertUser(newUser)
           userData =ajax.getData()
           refreshTable(userData)
+          addFn()
+          searchFn()
           modifyFn()
           deleteFn()
         })
@@ -93,6 +102,8 @@ $(".searchBtn").on("click",function(){
           ajax.modifyUser(user.getUserId(),newUser)
           userData =ajax.getData()
           refreshTable(userData)
+          addFn()
+          searchFn()
           modifyFn()
           deleteFn()
         })
@@ -109,6 +120,8 @@ $(".searchBtn").on("click",function(){
             return
           }
           refreshTable(userData)
+          addFn()
+          searchFn()
           modifyFn()
           deleteFn()
         })
@@ -121,6 +134,8 @@ $(".searchBtn").on("click",function(){
       ajax.deleteUser(id)
       userData =ajax.getData()
       refreshTable(userData)
+      addFn()
+      searchFn()
       modifyFn()
       deleteFn()
           //若已無使用者
