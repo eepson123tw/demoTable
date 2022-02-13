@@ -10,17 +10,18 @@
 <body>
 
 
-<h1 class="d-none">個人資料表頁面</h1>
+<h1 class="visually-hidden">個人資料表頁面</h1>
 <!-- 介紹 -->
   <section class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h2 class="display-3 mt-5 mb-3">個人資料表</h2>
+      <h2 class=" display-3 mt-5 mb-3">個人資料表</h2>
       <p class="lead">提供使用者 新增、搜尋、刪除、修改等功能。</p>
     </div>
   </section>
 
 <!-- 搜尋 與  新增  區塊 -->
 <section class="container my-2">
+  <h2 class="visually-hidden">功能列表</h2>
   <div class="row">
     <div class="col d-flex justify-content-end">   
       <button  type="button" class="btn btn-success me-1 resetBtn d-none" data-operate="reset" data-bs-toggle="modal" data-bs-target="#staticBackdrop">reset</button>
@@ -64,7 +65,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form class=" formGroup">
           <div class="form-group row chineseNameInput my-2">
             <label  class="col-sm-2 col-form-label"  for="chineseInput">中文姓名</label>
             <div class="col-sm-10">
@@ -79,29 +80,30 @@
               <small  id="validationEnglishName" class="d-none form-text invalid-feedback">不得為空</small>
           </div>
           </div>
-          <div class="form-group   genderCheckBox  my-2">
+          <div class="genderCheckBox  my-2">
               <label class="col-sm-2" >性別</label>
               <div class="form-check form-check-inline ">
-                <input class="form-check-input" type="radio" name="genderOptions" id="male" value="0">
-                <label class="form-check-label" for="inlineRadio1">男</label>
+                <input class="form-check-input" type="radio" name="genderOptions" id="male" value="0" required>
+                <label class="form-check-label " for="male">男</label>
               </div>
               <div  class="form-check form-check-inline ">       
-                <input class="form-check-input" type="radio" name="genderOptions" id="female" value="1">
-                <label class="form-check-label" for="inlineRadio2">女</label>
+                <input class="form-check-input" type="radio" name="genderOptions" id="female" value="1" required>
+                <label class="form-check-label" for="female">女</label>
               </div>
           </div>
+   
           <div class="form-group row phoneNumberInput  my-2">
             <label  class="col-sm-2 col-form-label"  for="phoneInput">手機</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="phoneInput" aria-describedby="phone" placeholder="輸入手機號碼" value="">
-              <small id="phone" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <input type="text" class="form-control" id="phoneInput" aria-describedby="phoneInput validationPhone" placeholder="輸入手機號碼 EX:0937985569" value="">
+              <small  id="validationPhone" class="d-none form-text invalid-feedback">不得為空</small>
             </div>
           </div>
           <div class="form-group row emailInput  my-2">
             <label  class="col-sm-2 col-form-label"  for="emailInput">電子信箱</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="emailInput" aria-describedby="emailRemind" placeholder="輸入電子信箱 Ex:example@mail.com" value="">
-              <small id="emailRemind" class=" form-text text-muted">We'll never share your email with anyone else.</small>
+              <input type="text" class="form-control" id="emailInput" aria-describedby="emailInput validationEmail" placeholder="輸入電子信箱 Ex:example@mail.com" value="">
+              <small  id="validationEmail" class="d-none form-text invalid-feedback">不得為空</small>
             </div>
           </div>
       </form>

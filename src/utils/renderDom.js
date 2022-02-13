@@ -5,11 +5,8 @@
  *          data api的回傳使用者資訊
  */
 export const   refreshTable=(data) =>{
-
   $(".tableData > tr").remove();
-  
   $.each(data, function (key, item) {
-
       const sex = item.sex ==="0" ? '男':'女'
       let row = $("<tr></tr>");
       //  {中文名子} {英文名子}-{性別}
@@ -23,6 +20,39 @@ export const   refreshTable=(data) =>{
       $(".tableData").append(row);
   });
 }
+
+/**
+ *  更新table 顯示欄位
+ *  @param test
+ *  顯示自定義文字
+ */
+ export const   refreshTableByNoUser=(text) =>{
+  $(".tableData > tr").remove();
+  let row = $("<tr></tr>");
+  //  {中文名子} {英文名子}-{性別}
+  row.append($("<td colspan='7'></td>").html( `<p class="h4 font-weight-bold text-red-500 text-center">${text}</p>`));
+  $(".tableData").append(row);
+}
+
+
+/**
+ *  animate 搜尋過渡
+ *          
+ */
+ export const   animateTransForm=() =>{
+  $(".tableData > tr").remove();
+  let row = $("<tr></tr>");
+  let row2 = $("<tr></tr>");
+  //  {中文名子} {英文名子}-{性別}
+
+  row.append($("<td colspan='7'></td>").html( `<div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div></div> `));
+  row2.append($("<td colspan='7'></td>").html( `<p class="h4 font-weight-bold text-blue-600 text-center">Loading.....</p>`));
+  $(".tableData").append(row);
+  $(".tableData").append(row2);
+}
+
+
+
 
 /**
  *  輸入表單user資料
