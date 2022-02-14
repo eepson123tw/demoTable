@@ -1,8 +1,8 @@
 
 /**
  *  更新table Dom元素
- * @param data
- *          data api的回傳使用者資訊
+ *  @param data
+ *  data api的回傳使用者資訊
  */
 export const   refreshTable=(data) =>{
   $(".tableData > tr").remove();
@@ -29,22 +29,19 @@ export const   refreshTable=(data) =>{
  export const   refreshTableByNoUser=(text) =>{
   $(".tableData > tr").remove();
   let row = $("<tr></tr>");
-  //  {中文名子} {英文名子}-{性別}
   row.append($("<td colspan='7'></td>").html( `<p class="h4 font-weight-bold text-red-500 text-center">${text}</p>`));
   $(".tableData").append(row);
 }
 
 
 /**
- *  animate 搜尋過渡
+ *  animate 搜尋過渡樣態
  *          
  */
- export const   animateTransForm=() =>{
+ export const  animateTransForm=() =>{
   $(".tableData > tr").remove();
   let row = $("<tr></tr>");
   let row2 = $("<tr></tr>");
-  //  {中文名子} {英文名子}-{性別}
-
   row.append($("<td colspan='7'></td>").html( `<div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div></div> `));
   row2.append($("<td colspan='7'></td>").html( `<p class="h4 font-weight-bold text-blue-600 text-center">Loading.....</p>`));
   $(".tableData").append(row);
@@ -58,7 +55,6 @@ export const   refreshTable=(data) =>{
  *  輸入表單user資料
  */
 export const insertFormInput=(data,curId)=>{
-
   let user = data.find((user)=>user.id === curId)
   const {cnname,email,enname,id,phone,sex} =user
   $("#chineseInput").val(cnname) 
@@ -75,7 +71,9 @@ export const insertFormInput=(data,curId)=>{
 
 
 /**
- *  變更dialog文字及顏色
+ *  根據使用者操作變更dialog文字及顏色
+ *  @param type string
+ *  使用者選定操作
  */
 export const  dialogTypeFactor =(type,id)=>{
   const  titleText=(type)=>{

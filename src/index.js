@@ -23,7 +23,6 @@ $(document).ready(function () {
     validate.init()
   }
 
-
   //實例初始化
   let  userData =ajax.getData()
   refreshTable(userData)
@@ -32,53 +31,49 @@ $(document).ready(function () {
   modifyFn()
   deleteFn()
 
-
-
-  
   //新增使用者
-function addFn(){
-  $('.addBtn').on("click",function(){
-    resetFn()
-    type.setType(this.dataset.operate);
-    dialogTypeFactor(type.getType())
-  })
-}
-//搜尋使用者
-function searchFn(){
-  $(".searchBtn").on("click",function(){
-    resetFn()
-    type.setType(this.dataset.operate);
-    dialogTypeFactor(type.getType())
-  })
-}
+  function addFn(){
+    $('.addBtn').on("click",function(){
+      resetFn()
+      type.setType(this.dataset.operate);
+      dialogTypeFactor(type.getType())
+    })
+  }
+  //搜尋使用者
+  function searchFn(){
+    $(".searchBtn").on("click",function(){
+      resetFn()
+      type.setType(this.dataset.operate);
+      dialogTypeFactor(type.getType())
+    })
+  }
   //修改使用者
-function modifyFn(){
-  $('.modifyBtn').on("click",function(){
-    validate.reset()
-    validate.init()
-    let id = this.dataset.id
-    let  userData =ajax.getData()
-    user.setUserId(id)
-    type.setType(this.dataset.operate);
-    dialogTypeFactor(type.getType())
-    insertFormInput(userData,id)
-  })
+  function modifyFn(){
+    $('.modifyBtn').on("click",function(){
+      validate.reset()
+      validate.init()
+      let id = this.dataset.id
+      let  userData =ajax.getData()
+      user.setUserId(id)
+      type.setType(this.dataset.operate);
+      dialogTypeFactor(type.getType())
+      insertFormInput(userData,id)
+    })
 
-}
+  }
 
-//刪除使用者
-function deleteFn(){
-  $('.deleteBtn').on("click",function(){
-    let id = this.dataset.id
-    user.setUserId(id)
-  })
-}
+  //刪除使用者
+  function deleteFn(){
+    $('.deleteBtn').on("click",function(){
+      let id = this.dataset.id
+      user.setUserId(id)
+    })
+  }
 
-//確認鍵點擊
+  //確認鍵點擊
   $('.editedBtn').click(()=>{
     let isValidate=  validate.checkAll()
       //確認新增使用者
-      console.log({type:type.getType()});
       if(type.getType()==="add" && isValidate){
         animateTransForm()
         $('.resetBtn').click()

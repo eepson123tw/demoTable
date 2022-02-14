@@ -1,7 +1,7 @@
 /**
  *  目前選取的使用者
- * @param type
- *          功能 string
+ * @param type string
+ *         功能 
  * @uses setUserId 設置目前使用者ID
  * @uses getUserId 獲得目前使用者ID
  */

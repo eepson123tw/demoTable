@@ -1,7 +1,7 @@
 /**
  *  模擬api延遲
  *   @param sec
- *         延遲秒數 number
+ *   延遲秒數 number
  */
 export const  delate = (sec)=>{
   return new Promise((res, rej) => {

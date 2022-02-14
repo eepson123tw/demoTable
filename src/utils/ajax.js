@@ -1,14 +1,14 @@
 /**
  *  模擬api之物件
  * @param url
- *          url 呼叫controller的url
+ *    url 呼叫controller的url
  * @param json
- *          datatype 資料傳回格式
+ *    datatype 資料傳回格式
  * @uses getData 利用ajax傳回的使用者資料
  * @uses insertUser 利用ajax新增使用者
  * @uses modifyUser 利用ajax修改目前使用者
  * @uses deleteUser 利用ajax刪除目前使用者
-  * @uses findUser 利用ajax新增目前使用者
+ * @uses findUser 利用ajax新增目前使用者
  */
 
 
