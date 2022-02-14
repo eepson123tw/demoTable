@@ -81,7 +81,7 @@ optimization: {
   ],
 },
 
-  devtool: "source-map",
+  devtool: process.env.NODE_ENV==='development'?"cheap-module-eval-source-map" : false,
   target: 'web',
   resolve: {
     extensions: [".ts", ".js"],
