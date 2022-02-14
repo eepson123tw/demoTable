@@ -112,8 +112,8 @@ function deleteFn(){
       if(type.getType()==="search" && isValidate){
         animateTransForm()
         $('.resetBtn').click()
-        delate(500).then((res)=>{
-          let  newUser= getFormData()
+        delate(1000).then((res)=>{
+          let newUser= getFormData()
           userData= ajax.findUser(newUser)
           if(!userData){
             refreshTableByNoUser("查無使用者")
