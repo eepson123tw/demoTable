@@ -78,6 +78,7 @@ function deleteFn(){
   $('.editedBtn').click(()=>{
     let isValidate=  validate.checkAll()
       //確認新增使用者
+      console.log({type:type.getType()});
       if(type.getType()==="add" && isValidate){
         animateTransForm()
         $('.resetBtn').click()
@@ -91,7 +92,7 @@ function deleteFn(){
           modifyFn()
           deleteFn()
         })
-       
+        return
       }
       //確認修改使用者
       if(type.getType()==="modify" && isValidate){
@@ -107,6 +108,7 @@ function deleteFn(){
           modifyFn()
           deleteFn()
         })
+        return
       }
      //搜尋修改使用者
       if(type.getType()==="search" && isValidate){
@@ -125,6 +127,7 @@ function deleteFn(){
           modifyFn()
           deleteFn()
         })
+        return
       }
     })
 
