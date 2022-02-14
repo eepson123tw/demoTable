@@ -142,6 +142,10 @@ function deleteFn(){
       if(!userData.length){
         $('.btnSmallDailogCancel2').click()
         refreshTableByNoUser("表單中已無使用者，請新增使用者!")
+        addFn()
+        searchFn()
+        modifyFn()
+        deleteFn()
       }
       $('.deleteBtn').click()
   })
